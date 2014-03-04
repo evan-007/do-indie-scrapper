@@ -7,7 +7,7 @@ require 'rio'
 
 @counter = YAML.load_file("counter.yaml")
 
-@range = 500
+@range = 50
 
 File.open("counter.yaml" , "w+") {|f| YAML.dump(@counter, f)}
 csv = CSV.open('band-info.csv', 'a+')
@@ -23,10 +23,11 @@ links.each { |link|
   @label = page.css('.inner')[3].text
   if page.css('.post-image.lightbox.overlay a')[0]
     @image_url = page.css('.post-image.lightbox.overlay a')[0]['href']
+    Magick::Image.read(@image_url).first.resize_to_fill(600,600).write(@name)
   else 
     @image_url = 'no-image'
   end
-  Magick::Image.read(@image_url).first.resize_to_fill(600,600).write(@name)
+  
   if page.css('.inner')[5]
     @contact = page.css('.inner')[5].text
   else
