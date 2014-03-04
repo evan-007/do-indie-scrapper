@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'csv'
 
 file = File.open('list.txt', 'r')
-CSV.open('band.info.csv', 'a+')
+CSV.open('band-info.csv', 'a+')
 while line = file.gets #is this right?
   page = Nokogiri::HTML(open("#{line}"))
   @name = page.css('h1').text
