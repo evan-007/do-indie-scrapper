@@ -11,11 +11,21 @@ while line = file.gets #is this right?
   @label = page.css('.inner')[3].text
   @contact = page.css('.inner')[5].text
   @genre = page.css('.inner')[7] #this is broken
-  @facebook = page.css('.button.float-left')[0]['href']
+  @facebook = page.css('.button.float-left a')[0]['href'] #broken ->regex?
+  @twitter = page.css('.button.float-left a')[1]['href']
+  @cafe = page.css('.button.float-left a')[2]['href']
+  #@soundcloud = page.css(".")['href'] #nope, try XPath?
+  @youtube1 = page.css('.post-video')[0]
+  @youtube2 = page.css('.post-video')[1]
   puts @name
   puts @english_name
   puts @label
   puts @contact
   puts @genre
   puts @facebook
+  puts @twitter
+  puts @cafe
+  puts @soundcloud
+  puts @youtube1
+  puts @youtube2
 end
