@@ -31,5 +31,8 @@ require 'net/https'
 end
 
 # broken: Chico-Cubo-이미지.jpg |
+# pentasonic
+# 국카스텐.jpg Guckkasten
+
   # browser.save_screenshot("#{@en}.png") #works, but adds blackspace around images
   
