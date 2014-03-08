@@ -7,7 +7,7 @@ require 'rio'
 
 @counter = YAML.load_file("counter.yaml")
 
-@range = 50
+@range = 10 
 
 File.open("counter.yaml" , "w+") {|f| YAML.dump(@counter, f)}
 csv = CSV.open('band-info.csv', 'a+')
