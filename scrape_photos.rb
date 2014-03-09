@@ -10,8 +10,7 @@ require 'net/https'
 
 @link = 0
 @name = 1
-
-  # browser = browser=Selenium::WebDriver.for:firefox
+@id = 2
 
   CSV.foreach("photos.csv") do |row|
   @photo = row[@link]
